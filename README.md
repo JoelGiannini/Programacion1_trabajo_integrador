@@ -50,16 +50,22 @@ Se comenzaron a detectar errores que fueron corregidos.
 
 ## 4.1 Error: Undefined variable $indic
 
-Archivo: htmls/contenido_home.php
-Causa: la variable $indic se usaba sin estar definida.
-Solución: inicializar antes del loop:
+**Archivo:** htmls/contenido_home.php
+
+**Causa:** la variable $indic se usaba sin estar definida.
+
+**Solución:** inicializar antes del loop:
 
 $indic = 0;
 
 ## 4.2 Error: Undefined property: Pagina::$anioo
 
-Archivo: htmls/footer.php
-Causa: la clase Pagina usa $anio, no $anioo.
+**Archivo:** htmls/footer.php
+
+**Causa:** la clase Pagina usa $anio, no $anioo.
+
+**Solución:**
+
 Línea corregida:
 
 De:
@@ -73,8 +79,12 @@ $paginaWeb->anio
 
 ## 4.3 Error: Class "Paginas" not found
 
-Archivo: home.php
-Causa: se instanciaba una clase llamada “Paginas” que no existe.
+**Archivo:** home.php
+
+**Causa:** se instanciaba una clase llamada “Paginas” que no existe.
+
+**Solución:**
+
 Cambio realizado:
 
 De:
@@ -88,38 +98,21 @@ $paginaWeb = new Pagina("Hitos de la informática");
 
 ## 4.4 Error: archivo faltante formularioContacto.php
 
-Error:
+**Error:**
 
 Failed opening required 'htmls/formularioContacto.php'
 
 
-Causa: el archivo no existía en la carpeta htmls/.
-Solución: crear el archivo:
+**Causa:** el archivo no existía en la carpeta htmls/.
+**Solución:** crear el archivo:
 
 htmls/formularioContacto.php
 
 
 Además, se lo completó con un formulario funcional.
 
-## 4.5 Error: ruta mal escrita hacia nav.php
 
-Archivo: detalle.php
-Error:
-
-Failed opening required 'html/nav.php'
-
-
-Causa: el directorio verdadero es htmls/ (con S).
-Solución: cambiar:
-
-require_once("html/nav.php");
-
-
-por:
-
-require_once("htmls/nav.php");
-
-## 4.6 El formulario de contacto no hacía nada
+## 4.5 El formulario de contacto no hacía nada
 
 Se agregó validación y visualización de datos enviados mediante POST.
 
@@ -152,6 +145,26 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 }
 ?>
 ```
+
+## 4.6 Error: ruta mal escrita hacia nav.php
+
+**Archivo:** detalle.php
+
+**Error:**
+
+Failed opening required 'html/nav.php'
+
+
+**Causa:** el directorio verdadero es htmls/ (con S).
+
+**Solución:** cambiar:
+
+require_once("html/nav.php");
+
+
+por:
+
+require_once("htmls/nav.php");
 
 ## 4.7 Confirmación de rutas correctas en todos los includes
 
