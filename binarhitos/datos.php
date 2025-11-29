@@ -1,0 +1,7 @@
+<?php
+$hitos = array(
+			1 => array("titulo"=>"El desarrollo de COBOL", "anio"=>"(1959)" , "contenido"=>"Hay muchos lenguajes de programación, pero ninguno ha influido en tantos otros como COBOL. Lo que hace que destaque es el hecho de que todavía hay máquinas ejecutando aplicaciones en este lenguaje. ", "img"=>"img/cobol2.png"),
+			2 => array("titulo"=>"La creación de UNIX", "anio"=>"(1970)" , "contenido"=>"Aunque muchos aseguran que Windows es el sistema operativo más importante jamás creado, UNIX debería tener ese título. Comenzó como un proyecto entre el MIT y AT&T Bell. Su mayor logro, crear un entorno multiusuario, al ser el primer sistema operativo que permitía que más de un usuario accediera a la vez. ", "img"=>"img/unix.jpg"),
+			3 => array("titulo"=>"El inicio del trabajo de Linus Torvalds en Linux", "anio"=>"(1991)" , "contenido"=>"Linux ha traído la licencia GPL y el código abierto y resultó el inicio de la guerra a las prácticas monopolísticas de algunas compañías establecidas en el sector, lo que aumentó la competencia. Linux ha permitido que estudiantes y pequeñas empresas puedan pensar a lo grande, pese a sus minúsculos presupuestos.", "img"=>"img/linus.jpg"),
+			4 => array("titulo"=>"El inicio de la Wikipedia", "anio"=>"(2000)" , "contenido"=>"Wikipedia se ha convertido en una de las principales fuentes de información en Internet. Es el recurso colaborativo más grande disponible al público. Wikipedia se ha convertido en una de las fuentes citadas con mayor frecuencia en el planeta. ", "img"=>"img/wikipedia.png")
+		);
