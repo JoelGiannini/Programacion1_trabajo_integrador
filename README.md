@@ -1,4 +1,4 @@
-# 📘 ** Programacion 1 trabajo Integrador**
+📘 ** Programacion 1 trabajo Integrador**
 
 ## 🚀 Instalación, configuración y correcciones realizadas
 
@@ -36,7 +36,7 @@ sudo chown -R www-data:www-data binarhitos/
 
 ## 🖥️ 3. Ejecución inicial del sitio
 
-Acceder al sitio desde cualquier navegador:
+Acceder a:
 
 ```
 http://localhost/binarhitos/home.php
@@ -48,81 +48,82 @@ Se comenzaron a detectar errores que fueron corregidos.
 
 # 🛠️ 4. Errores corregidos
 
-## 4.1 Clase “Paginas” no encontrada
+## 4.1 Error: Undefined variable $indic
 
-**Error:**
+Archivo: htmls/contenido_home.php
+Causa: la variable $indic se usaba sin estar definida.
+Solución: inicializar antes del loop:
 
-```
-Class "Paginas" not found
-```
+$indic = 0;
 
-**Solución:**  
-Cambiar:
+## 4.2 Error: Undefined property: Pagina::$anioo
 
-```php
+Archivo: htmls/footer.php
+Causa: la clase Pagina usa $anio, no $anioo.
+Línea corregida:
+
+De:
+
+$paginaWeb->anioo
+
+
+A:
+
+$paginaWeb->anio
+
+## 4.3 Error: Class "Paginas" not found
+
+Archivo: home.php
+Causa: se instanciaba una clase llamada “Paginas” que no existe.
+Cambio realizado:
+
+De:
+
 $paginaWeb = new Paginas(...);
-```
 
-por:
 
-```php
+A:
+
 $paginaWeb = new Pagina("Hitos de la informática");
-```
 
----
+## 4.4 Error: archivo faltante formularioContacto.php
 
-## 4.2 Propiedad inexistente `$anioo`
+Error:
 
-**Error:**
-
-```
-Undefined property: Pagina::$anioo
-```
-
-**Solución:**  
-Cambiar `$anioo` por `$anio` en `footer.php`.
-
----
-
-## 4.3 Archivo faltante formularioContacto.php
-
-**Error:**
-
-```
 Failed opening required 'htmls/formularioContacto.php'
-```
 
-**Solución:**  
-Crear el archivo faltante dentro del directorio `htmls/`.
 
----
+Causa: el archivo no existía en la carpeta htmls/.
+Solución: crear el archivo:
 
-## 4.4 Ruta incorrecta a nav.php
+htmls/formularioContacto.php
 
-**Error:**
 
-```
+Además, se lo completó con un formulario funcional.
+
+## 4.5 Error: ruta mal escrita hacia nav.php
+
+Archivo: detalle.php
+Error:
+
 Failed opening required 'html/nav.php'
-```
 
-**Solución:**  
-Modificar en `detalle.php`:
 
-```php
+Causa: el directorio verdadero es htmls/ (con S).
+Solución: cambiar:
+
 require_once("html/nav.php");
-```
+
 
 por:
 
-```php
 require_once("htmls/nav.php");
-```
 
----
+## 4.6 El formulario de contacto no hacía nada
 
-## 4.5 Formulario de contacto funcionando
+Se agregó validación y visualización de datos enviados mediante POST.
 
-Se agregó un formulario con manejo de POST:
+Código final:
 
 ```php
 <?php
@@ -152,14 +153,58 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 ?>
 ```
 
----
+## 4.7 Confirmación de rutas correctas en todos los includes
 
-# 🎉 5. Estado final
+Se revisaron los includes de todos los archivos:
 
-✔ Sitio funcionando  
-✔ Errores corregidos  
-✔ Formulario operativo  
-✔ Archivos ubicados correctamente  
+header.php
+
+nav.php
+
+detalle.php
+
+home.php
+
+contacto.php
+
+footer.php
+
+javascripts.php
+
+Corrigiendo rutas mal escritas como:
+
+html/
+htmls/
+./htmls/
+
+
+Todas quedaron estandarizadas como:
+
+require_once("htmls/archivo.php");
+
+## 4.8 El formulario no se mostraba por falta del archivo
+
+
+Se confirmó que:
+
+htmls/formularioContacto.php
+
+
+no existía, por eso Apache tiraba error fatal.
+
+Archivo creado → problema resuelto.
+
+
+
+🎉 5. Estado final del sitio
+
+✔ Sitio totalmente funcional
+✔ Todos los includes corregidos
+✔ Formulario 100% operativo
+✔ Variables y clases revisadas
+✔ Archivos faltantes creados
+✔ Sin warnings ni fatal errors
+
 
 ---
 
