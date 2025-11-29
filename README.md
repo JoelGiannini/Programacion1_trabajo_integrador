@@ -36,7 +36,7 @@ sudo chown -R www-data:www-data binarhitos/
 
 ## 🖥️ 3. Ejecución inicial del sitio
 
-Acceder a:
+Acceder al sitio desde cualquier navegador:
 
 ```
 http://localhost/binarhitos/home.php
