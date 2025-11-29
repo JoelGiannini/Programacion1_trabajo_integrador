@@ -104,6 +104,7 @@ Failed opening required 'htmls/formularioContacto.php'
 
 
 **Causa:** el archivo no existía en la carpeta htmls/.
+
 **Solución:** crear el archivo:
 
 htmls/formularioContacto.php
@@ -194,20 +195,6 @@ htmls/
 Todas quedaron estandarizadas como:
 
 require_once("htmls/archivo.php");
-
-## 4.8 El formulario no se mostraba por falta del archivo
-
-
-Se confirmó que:
-
-htmls/formularioContacto.php
-
-
-no existía, por eso Apache tiraba error fatal.
-
-Archivo creado → problema resuelto.
-
-
 
 🎉 5. Estado final del sitio
 
